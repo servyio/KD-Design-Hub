@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>KD Design Hub | تصميم المتاجر الإلكترونية</title>
+  <title>KD Design Hub | تصاميم المتاجر الإلكترونية</title>
 
   <style>
     * {
@@ -13,14 +13,22 @@
       padding: 0;
     }
 
+    :root {
+      --black: #171717;
+      --gray: #666;
+      --light: #f5f5f5;
+      --border: #e7e7e7;
+      --white: #fff;
+    }
+
     html {
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Tahoma, sans-serif;
       background: #f7f7f7;
-      color: #171717;
+      color: var(--black);
       line-height: 1.7;
     }
 
@@ -29,274 +37,207 @@
       color: inherit;
     }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
+    /* HEADER */
 
     header {
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid #e8e8e8;
       position: sticky;
       top: 0;
       z-index: 100;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
-      height: 75px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 17px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      font-size: 23px;
+      font-size: 22px;
       font-weight: 800;
-      letter-spacing: -1px;
     }
 
-    .logo span {
-      font-weight: 400;
-      color: #777;
-    }
-
-    nav {
+    .menu {
       display: flex;
-      gap: 28px;
+      gap: 25px;
+      font-size: 14px;
       color: #555;
-      font-size: 15px;
     }
 
-    nav a:hover {
+    .menu a:hover {
       color: #000;
     }
 
+    /* HERO */
+
     .hero {
-      padding: 100px 0;
-      background: #fff;
+      max-width: 1200px;
+      margin: auto;
+      padding: 95px 20px 80px;
+      text-align: center;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
+    .hero-label {
+      display: inline-block;
+      background: #eaeaea;
+      padding: 7px 17px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 22px;
     }
 
-    .small-title {
-      color: #777;
-      font-size: 14px;
-      margin-bottom: 18px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    h1 {
-      font-size: clamp(42px, 6vw, 72px);
-      line-height: 1.1;
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.08;
       letter-spacing: -3px;
-      margin-bottom: 25px;
-    }
-
-    h1 span {
-      color: #777;
+      margin-bottom: 22px;
     }
 
     .hero p {
+      max-width: 650px;
+      margin: auto;
       color: #666;
-      max-width: 560px;
-      font-size: 18px;
+      font-size: 17px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--black);
+      color: #fff;
+      padding: 13px 27px;
+      border-radius: 11px;
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 35px 20px 90px;
+    }
+
+    .section-title {
       margin-bottom: 32px;
     }
 
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 5px;
     }
 
-    .btn {
-      padding: 14px 25px;
-      border-radius: 10px;
-      font-weight: bold;
-      display: inline-block;
-      transition: .2s;
-    }
-
-    .btn-dark {
-      background: #111;
-      color: #fff;
-    }
-
-    .btn-dark:hover {
-      transform: translateY(-2px);
-      background: #333;
-    }
-
-    .btn-light {
-      background: #eee;
-      color: #111;
-    }
-
-    .btn-light:hover {
-      background: #ddd;
-    }
-
-    .showcase {
-      background: #ededed;
-      border-radius: 24px;
-      padding: 18px;
-    }
-
-    .browser {
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,.08);
-    }
-
-    .browser-top {
-      height: 38px;
-      background: #fafafa;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 0 14px;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ccc;
-    }
-
-    .browser-content {
-      padding: 35px 25px;
-    }
-
-    .fake-title {
-      width: 55%;
-      height: 18px;
-      background: #ddd;
-      margin-bottom: 12px;
-      border-radius: 5px;
-    }
-
-    .fake-text {
-      width: 80%;
-      height: 10px;
-      background: #eee;
-      margin-bottom: 25px;
-      border-radius: 5px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 12px;
-    }
-
-    .product {
-      height: 130px;
-      background: #f0f0f0;
-      border-radius: 10px;
-    }
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-head {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-head small {
-      color: #777;
-      font-weight: bold;
-    }
-
-    .section-head h2 {
-      font-size: 40px;
-      margin: 8px 0;
-      letter-spacing: -1px;
-    }
-
-    .section-head p {
+    .section-title p {
       color: #777;
     }
+
+    /* DESIGNS */
 
     .designs {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
     }
 
     .design-card {
       background: #fff;
-      border: 1px solid #e7e7e7;
-      border-radius: 18px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
       overflow: hidden;
       transition: .25s;
     }
 
     .design-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,.07);
+      box-shadow: 0 18px 40px rgba(0,0,0,.08);
     }
 
-    .design-image {
-      height: 230px;
-      background: linear-gradient(135deg,#e8e8e8,#fafafa);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
+    .image-box {
+      height: 370px;
+      position: relative;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .design-card:hover .image-box img {
+      transform: scale(1.04);
+    }
+
+    .category {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(255,255,255,.92);
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 12px;
       font-weight: bold;
-      color: #555;
     }
 
-    .design-info {
-      padding: 22px;
+    .card-info {
+      padding: 23px;
     }
 
-    .design-info h3 {
-      margin-bottom: 7px;
+    .card-info h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
     }
 
-    .design-info p {
+    .card-info p {
       color: #777;
       font-size: 14px;
+      margin-bottom: 18px;
     }
+
+    .card-button {
+      display: inline-block;
+      background: #171717;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 13px;
+    }
+
+    /* SERVICES */
 
     .services {
       background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .service {
-      padding: 30px;
-      background: #f7f7f7;
-      border-radius: 16px;
-      border: 1px solid #eee;
+      background: #f6f6f6;
+      padding: 28px;
+      border-radius: 18px;
     }
 
     .service-number {
-      font-size: 13px;
       color: #999;
-      margin-bottom: 25px;
+      font-size: 13px;
+      margin-bottom: 14px;
     }
 
     .service h3 {
-      font-size: 21px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .service p {
@@ -304,66 +245,69 @@
       font-size: 14px;
     }
 
-    .contact {
-      background: #111;
-      color: #fff;
-    }
+    /* CONTACT */
 
-    .contact-box {
+    .contact {
+      background: #171717;
+      color: white;
       text-align: center;
-      max-width: 700px;
+      padding: 85px 20px;
     }
 
     .contact h2 {
-      font-size: 44px;
-      line-height: 1.2;
-      margin: 15px 0;
+      font-size: 38px;
+      margin-bottom: 10px;
     }
 
     .contact p {
       color: #bbb;
-      margin-bottom: 28px;
+      margin-bottom: 25px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      background: white;
+      color: #111;
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-size: 14px;
     }
 
     footer {
       background: #111;
-      border-top: 1px solid #333;
-      color: #999;
-      padding: 25px 0;
+      color: #888;
       text-align: center;
-      font-size: 13px;
+      padding: 20px;
+      font-size: 12px;
     }
 
-    @media (max-width: 800px) {
+    /* MOBILE */
 
-      .hero {
-        padding: 65px 0;
-      }
+    @media (max-width: 750px) {
 
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      nav {
+      .menu {
         display: none;
       }
 
-      h1 {
-        font-size: 48px;
+      .hero {
+        padding: 70px 20px 60px;
       }
 
-      .designs,
+      .hero h1 {
+        font-size: 45px;
+        letter-spacing: -1.5px;
+      }
+
+      .designs {
+        grid-template-columns: 1fr;
+      }
+
       .service-grid {
         grid-template-columns: 1fr;
       }
 
-      .products {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .contact h2 {
-        font-size: 34px;
+      .image-box {
+        height: 320px;
       }
     }
   </style>
@@ -371,207 +315,376 @@
 
 <body>
 
-<header>
-  <div class="container nav">
+  <!-- HEADER -->
 
-    <div class="logo">
-      KD <span>Design Hub</span>
-    </div>
+  <header>
+    <div class="nav">
 
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#designs">التصاميم</a>
-      <a href="#services">الخدمات</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
-
-  </div>
-</header>
-
-<main>
-
-<section class="hero" id="home">
-
-  <div class="container hero-grid">
-
-    <div>
-
-      <div class="small-title">
-        KD DESIGN HUB
+      <div class="logo">
+        KD Design Hub
       </div>
 
-      <h1>
-        نصمم متجرك
-        <span>بشكل مختلف.</span>
-      </h1>
-
-      <p>
-        تصاميم واجهات عصرية للمتاجر الإلكترونية،
-        تساعدك على تقديم منتجاتك بصورة احترافية وجذابة.
-      </p>
-
-      <div class="buttons">
-
-        <a href="#designs" class="btn btn-dark">
-          استعرض التصاميم
-        </a>
-
-        <a href="#contact" class="btn btn-light">
-          اطلب تصميمك
-        </a>
-
-      </div>
+      <nav class="menu">
+        <a href="#home">الرئيسية</a>
+        <a href="#designs">التصاميم</a>
+        <a href="#services">الخدمات</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
 
     </div>
+  </header>
 
-    <div class="showcase">
 
-      <div class="browser">
+  <!-- HERO -->
 
-        <div class="browser-top">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
+  <section class="hero" id="home">
 
-        <div class="browser-content">
+    <span class="hero-label">
+      تصاميم متاجر إلكترونية
+    </span>
 
-          <div class="fake-title"></div>
-          <div class="fake-text"></div>
+    <h1>
+      نصمم متجرك<br>
+      بشكل مختلف.
+    </h1>
 
-          <div class="products">
-            <div class="product"></div>
-            <div class="product"></div>
-            <div class="product"></div>
-            <div class="product"></div>
-            <div class="product"></div>
-            <div class="product"></div>
-          </div>
+    <p>
+      تصاميم عصرية واحترافية للمتاجر الإلكترونية،
+      تساعد علامتك التجارية على الظهور بشكل أجمل وأكثر احترافية.
+    </p>
 
-        </div>
+    <a href="#designs" class="hero-button">
+      شاهد التصاميم
+    </a>
 
-      </div>
+  </section>
 
+
+  <!-- DESIGNS -->
+
+  <section class="section" id="designs">
+
+    <div class="section-title">
+      <h2>التصاميم</h2>
+      <p>نماذج مختلفة تناسب أنواع المتاجر الإلكترونية.</p>
     </div>
 
-  </div>
-
-</section>
-
-<section id="designs">
-
-  <div class="container">
-
-    <div class="section-head">
-      <small>أعمالنا</small>
-      <h2>تصاميم المتاجر</h2>
-      <p>نماذج يمكن تخصيصها حسب نشاط متجرك.</p>
-    </div>
 
     <div class="designs">
 
-      <div class="design-card">
-        <div class="design-image">أزياء</div>
 
-        <div class="design-info">
+      <!-- 1 أزياء -->
+
+      <div class="design-card">
+
+        <div class="image-box">
+
+          <img
+            src="https://images.pexels.com/photos/3927390/pexels-photo-3927390.jpeg?cs=srgb&dl=pexels-cottonbro-3927390.jpg&fm=jpg"
+            alt="تصميم متجر أزياء"
+          >
+
+          <span class="category">
+            أزياء
+          </span>
+
+        </div>
+
+        <div class="card-info">
+
           <h3>متجر أزياء</h3>
-          <p>واجهة عصرية مناسبة للملابس والأزياء.</p>
+
+          <p>
+            تصميم عصري وأنيق لمتاجر الملابس والأزياء.
+          </p>
+
+          <a href="#contact" class="card-button">
+            شاهد التصميم
+          </a>
+
         </div>
+
       </div>
 
-      <div class="design-card">
-        <div class="design-image">شنط</div>
 
-        <div class="design-info">
+      <!-- 2 شنط -->
+
+      <div class="design-card">
+
+        <div class="image-box">
+
+          <img
+            src="https://images.pexels.com/photos/27100523/pexels-photo-27100523.jpeg?cs=srgb&dl=pexels-jose-martin-segura-benites-1422456152-27100523.jpg&fm=jpg"
+            alt="تصميم متجر شنط"
+          >
+
+          <span class="category">
+            شنط
+          </span>
+
+        </div>
+
+        <div class="card-info">
+
           <h3>متجر شنط</h3>
-          <p>تصميم أنيق لعرض المنتجات بطريقة جذابة.</p>
+
+          <p>
+            واجهة فاخرة وبسيطة لمتاجر الشنط والإكسسوارات.
+          </p>
+
+          <a href="#contact" class="card-button">
+            شاهد التصميم
+          </a>
+
         </div>
+
       </div>
+
+
+      <!-- 3 عطور -->
 
       <div class="design-card">
-        <div class="design-image">تجميل</div>
 
-        <div class="design-info">
-          <h3>متجر تجميل</h3>
-          <p>تصميم بسيط واحترافي لمنتجات التجميل.</p>
+        <div class="image-box">
+
+          <img
+            src="https://images.pexels.com/photos/1961792/pexels-photo-1961792.jpeg?cs=srgb&dl=pexels-valeriya-1961792.jpg&fm=jpg"
+            alt="تصميم متجر عطور"
+          >
+
+          <span class="category">
+            عطور
+          </span>
+
         </div>
+
+        <div class="card-info">
+
+          <h3>متجر عطور</h3>
+
+          <p>
+            تصميم راقٍ يناسب متاجر العطور والمنتجات الفاخرة.
+          </p>
+
+          <a href="#contact" class="card-button">
+            شاهد التصميم
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- 4 تجميل -->
+
+      <div class="design-card">
+
+        <div class="image-box">
+
+          <img
+            src="https://images.pexels.com/photos/3552894/pexels-photo-3552894.jpeg?cs=srgb&dl=pexels-ian-panelo-3552894.jpg&fm=jpg"
+            alt="تصميم متجر تجميل"
+          >
+
+          <span class="category">
+            تجميل
+          </span>
+
+        </div>
+
+        <div class="card-info">
+
+          <h3>متجر تجميل</h3>
+
+          <p>
+            واجهة ناعمة وحديثة لمتاجر المكياج والعناية والجمال.
+          </p>
+
+          <a href="#contact" class="card-button">
+            شاهد التصميم
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- 5 أحذية -->
+
+      <div class="design-card">
+
+        <div class="image-box">
+
+          <img
+            src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?cs=srgb&dl=pexels-melvin-buezo-1253763-2529148.jpg&fm=jpg"
+            alt="تصميم متجر أحذية"
+          >
+
+          <span class="category">
+            أحذية
+          </span>
+
+        </div>
+
+        <div class="card-info">
+
+          <h3>متجر أحذية</h3>
+
+          <p>
+            تصميم عملي وعصري لمتاجر الأحذية والمنتجات الرياضية.
+          </p>
+
+          <a href="#contact" class="card-button">
+            شاهد التصميم
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- 6 متجر متنوع -->
+
+      <div class="design-card">
+
+        <div class="image-box">
+
+          <img
+            src="https://images.pexels.com/photos/33469139/pexels-photo-33469139.jpeg?cs=srgb&dl=pexels-elena_-sher-944248089-33469139.jpg&fm=jpg"
+            alt="تصميم متجر متنوع"
+          >
+
+          <span class="category">
+            متجر متنوع
+          </span>
+
+        </div>
+
+        <div class="card-info">
+
+          <h3>متجر متنوع</h3>
+
+          <p>
+            تصميم مرن يناسب المتاجر التي تحتوي على منتجات متعددة.
+          </p>
+
+          <a href="#contact" class="card-button">
+            شاهد التصميم
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <div class="section">
+
+      <div class="section-title">
+
+        <h2>خدماتنا</h2>
+
+        <p>
+          نساعدك على تحسين شكل متجرك الإلكتروني.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+
+        <div class="service">
+
+          <div class="service-number">
+            01
+          </div>
+
+          <h3>
+            تصميم واجهة المتجر
+          </h3>
+
+          <p>
+            تصميم واجهة عصرية ومنظمة تناسب نشاط متجرك.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-number">
+            02
+          </div>
+
+          <h3>
+            تصميم البنرات
+          </h3>
+
+          <p>
+            تصميم بنرات احترافية للعروض والمنتجات.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-number">
+            03
+          </div>
+
+          <h3>
+            تحسين شكل المتجر
+          </h3>
+
+          <p>
+            ترتيب الأقسام والمحتوى لتحسين تجربة الزائر.
+          </p>
+
+        </div>
+
+
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
 
-<section class="services" id="services">
+  <!-- CONTACT -->
 
-  <div class="container">
-
-    <div class="section-head">
-      <small>خدماتنا</small>
-      <h2>ماذا نقدم؟</h2>
-      <p>حلول تصميم تساعد متجرك على الظهور بصورة أفضل.</p>
-    </div>
-
-    <div class="service-grid">
-
-      <div class="service">
-        <div class="service-number">01</div>
-        <h3>تصميم واجهة المتجر</h3>
-        <p>
-          تصميم واجهة حديثة ومنظمة ومتوافقة مع الجوال.
-        </p>
-      </div>
-
-      <div class="service">
-        <div class="service-number">02</div>
-        <h3>تصميم البنرات</h3>
-        <p>
-          تصميم بنرات إعلانية مناسبة لهوية متجرك ومنتجاتك.
-        </p>
-      </div>
-
-      <div class="service">
-        <div class="service-number">03</div>
-        <h3>تحسين شكل المتجر</h3>
-        <p>
-          ترتيب المحتوى والأقسام بطريقة تجعل تجربة العميل أفضل.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section class="contact" id="contact">
-
-  <div class="container contact-box">
-
-    <small>KD DESIGN HUB</small>
+  <section class="contact" id="contact">
 
     <h2>
-      جاهز نخلي متجرك يظهر بشكل احترافي؟
+      جاهز تطور متجرك؟
     </h2>
 
     <p>
-      تواصل معنا لعرض التصاميم والخدمات المتاحة.
+      خلنا نصمم لك واجهة تناسب علامتك التجارية.
     </p>
 
-    <a href="#" class="btn btn-light">
+    <a href="#" class="contact-button">
       تواصل معنا
     </a>
 
-  </div>
+  </section>
 
-</section>
 
-</main>
+  <!-- FOOTER -->
 
-<footer>
-  © 2026 KD Design Hub — جميع الحقوق محفوظة
-</footer>
+  <footer>
+    © 2026 KD Design Hub — جميع الحقوق محفوظة
+  </footer>
+
 
 </body>
 </html>
